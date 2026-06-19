@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>
+        <%= title %> | Event Buddi
+    </title>
+
+    <meta name="description" content="<%= description %>">
+    <% if (seo_keywords && seo_keywords.length > 0) { %>
+    <meta name="keywords" content="<%= seo_keywords.join(', ') %>">
+    <% } %>
+    <meta property="og:title" content="<%= title %>">
+    <meta property="og:description" content="<%= description %>">
+    <meta property="og:image" content="https://event.assistbuddi.com/event_images/<%= image %>">
+    <meta property="og:type" content="event">
+    <meta property="og:url" content="https://event.assistbuddi.com/<%= event_id %>" />
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:title" content="<%= title %>">
+    <meta name="twitter:description" content="<%= description %>">
+    <meta name="twitter:image" content="https://event.assistbuddi.com/event_images/<%= image %>">
+
+    <link rel="canonical" href="https://event.assistbuddi.com/" />
+
+    <!-- Structured Data (JSON-LD) - Helps Google understand your site -->
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Event",
+            "name": "<%= title %>",
+            "description": "<%= description %>",
+            "location": {
+                "@type": "Place",
+                "name": "<%= location %>"
+            },
+            "image": "https://event.assistbuddi.com/event_images/<%= image %>"
+        }
+    </script>
+
+    <script type="module" crossorigin src="/assets/index-DXbrRm-L.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-DjzyrrEW.css">
+
+    <% if (analytics_meta_tag && analytics_meta_tag.trim() !== "") { %>
+    <%- analytics_meta_tag %>
+    <% } %>
+</head>
+
+<body class="bg-gray-50 dark:bg-gray-900">
+    <div id="root"></div>
+
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+</body>
+
+</html>
