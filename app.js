@@ -48,6 +48,7 @@ app.use("/", (req, res) => {
   res.render("index");
 });
 
+// CI/CD pipeline test - GitHub Actions
 app.listen(port, () => {
   console.log(`Server is running on port: ${port}`);
 });
